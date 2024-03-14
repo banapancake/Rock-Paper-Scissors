@@ -55,7 +55,7 @@ console.log(computerSelection)
 
 // Step 2.5 create a function that can take a players input
 
-   let playerSelection = prompt ();
+   const playerSelection = prompt ();
 
    console.log (playerSelection)
 
@@ -64,17 +64,31 @@ console.log(computerSelection)
 
 function playRound (playerSelection, computerSelection) {
 
-if (playerSelection.toLowerCase === "rock" && computerSelection === "scissor") {
+if ((playerSelection.toLowerCase() === "rock" && computerSelection === "scissors")
+|| (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper")
+|| (playerSelection.toLowerCase() === "paper" && computerSelection === "rock")
+) {
 
-return "You win! Rock beats scissor."
+return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`
 
 } 
 
-else {
+else if ((computerSelection === "rock" && playerSelection.toLowerCase() === "scissors")
+|| (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper")
+|| (computerSelection === "paper" && playerSelection.toLowerCase() === "rock")
+) {
 
+return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}.`
 
+} 
+
+else if (playerSelection.toLowerCase() === computerSelection) {
 return "its a tie!"
 
+}
+else {
+
+return "Error! Type either rock, paper, or scissors!"  
 }
 
 }
@@ -111,5 +125,3 @@ console.log(declareWinner)
     //use Console.log to see if we are returning the correct thing console.log(playRound(playerSelection, computerSelection));
 
     //Step 4: Create a playGame function that calls playRound 5 times and keeps score and reports a winner.
-
-        
