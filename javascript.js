@@ -49,10 +49,45 @@ function getComputerChoice () {
 
 }
 
-const CPU = getComputerChoice ();
+const computerSelection = getComputerChoice ();
 
-console.log(CPU)
+console.log(computerSelection)
+
+// Step 2.5 create a function that can take a players input
+
+   let playerSelection = prompt ();
+
+   console.log (playerSelection)
+
 // Step 3: create function playRound that takes parameter playerSelection and computer selection
+
+
+function playRound (playerSelection, computerSelection) {
+
+if (playerSelection.toLowerCase === "rock" && computerSelection === "scissor") {
+
+return "You win! Rock beats scissor."
+
+} 
+
+else {
+
+
+return "its a tie!"
+
+}
+
+}
+
+const declareWinner = playRound (playerSelection, computerSelection); 
+
+console.log(declareWinner)
+
+
+
+
+
+
 
     //Step 3a: make sure that playerSelection is converted .toLowerCase
     
