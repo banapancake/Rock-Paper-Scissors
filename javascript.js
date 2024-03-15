@@ -2,6 +2,8 @@
 
 // Step 1: initialize our rock paper and scissors variables
 
+
+
 let rock = "rock";
 let paper ="paper";
 let scissors ="scissors";
@@ -69,7 +71,9 @@ if ((playerSelection.toLowerCase() === "rock" && computerSelection === "scissors
 || (playerSelection.toLowerCase() === "paper" && computerSelection === "rock")
 ) {
 
-return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`
+let win = `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`
+
+return win
 
 } 
 
@@ -78,17 +82,24 @@ else if ((computerSelection === "rock" && playerSelection.toLowerCase() === "sci
 || (computerSelection === "paper" && playerSelection.toLowerCase() === "rock")
 ) {
 
-return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}.`
+let loss = `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}.`
+
+return loss
 
 } 
 
 else if (playerSelection.toLowerCase() === computerSelection) {
-return "its a tie!"
+let tie = "its a tie!"
+
+return tie
 
 }
 else {
 
-return "Error! Type either rock, paper, or scissors!"  
+let error = "Error! Type either rock, paper, or scissors!"  
+
+return error
+
 }
 
 }
@@ -97,11 +108,44 @@ const declareWinner = playRound (playerSelection, computerSelection);
 
 console.log(declareWinner)
 
+let totalWins = 0;
+
+let totalLosses = 0;
+
+for (i = 0; i<5; i++) { function playGame(declareWinner) {
 
 
 
 
 
+
+    if (declareWinner === "Error! Type either rock, paper, or scissors!") {
+    
+    totalWins = totalWins + 1;
+
+        return `You have ${totalWins} total wins`
+    
+
+
+    }
+
+else {
+
+    totalLosses = totalLosses + 1;
+
+return `You have ${totalLosses} total losses`
+}
+    }
+
+console.log(playGame(declareWinner))
+
+}
+
+
+// playGame(declareWinner)
+
+
+// console.log(playGame(declareWinner))
 
     //Step 3a: make sure that playerSelection is converted .toLowerCase
     
