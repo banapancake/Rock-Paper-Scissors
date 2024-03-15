@@ -1,12 +1,24 @@
 //we are writing a rock-paper-scissors game to be played in console log
 
 // Step 1: initialize our rock paper and scissors variables
+function reportScore (){
 
+
+
+let totalWins = 0;
+
+let totalLosses = 0;
+
+
+
+for (i = 0; i < 5; i++) {
 
 
 let rock = "rock";
 let paper ="paper";
 let scissors ="scissors";
+
+
 
 
 
@@ -37,7 +49,7 @@ console.log(result)
 
 function getComputerChoice () {
 
-    if (result === 1) {
+  if (result === 1) {
     return "rock"
     }
 
@@ -66,12 +78,15 @@ console.log(computerSelection)
 
 function playRound (playerSelection, computerSelection) {
 
+
+
+
 if ((playerSelection.toLowerCase() === "rock" && computerSelection === "scissors")
 || (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper")
 || (playerSelection.toLowerCase() === "paper" && computerSelection === "rock")
 ) {
-
-let win = `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`
+    totalWins = totalWins + 1;
+    let win = `You win this round! ${playerSelection.toLowerCase()} beats ${computerSelection}. You have won ${totalWins} times`
 
 return win
 
@@ -81,14 +96,15 @@ else if ((computerSelection === "rock" && playerSelection.toLowerCase() === "sci
 || (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper")
 || (computerSelection === "paper" && playerSelection.toLowerCase() === "rock")
 ) {
-
-let loss = `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}.`
+    totalLosses = totalLosses + 1;
+    let loss = `You lose this round! ${computerSelection} beats ${playerSelection.toLowerCase()}. You have lost ${totalLosses} times`
 
 return loss
 
 } 
 
 else if (playerSelection.toLowerCase() === computerSelection) {
+
 let tie = "its a tie!"
 
 return tie
@@ -96,7 +112,7 @@ return tie
 }
 else {
 
-let error = "Error! Type either rock, paper, or scissors!"  
+let error = "Error! Type either rock, paper, or scissors!"
 
 return error
 
@@ -104,22 +120,50 @@ return error
 
 }
 
+
+
+
 const declareWinner = playRound (playerSelection, computerSelection); 
 
 console.log(declareWinner)
 
-let totalWins = 0;
+if (i===4) {
 
-let totalLosses = 0;
+    if(totalWins > totalLosses) {
 
-for (i = 0; i<5; i++) { function playGame(declareWinner) {
+console.log(`You win the game! You won ${totalWins} times and lost ${totalLosses} times`)
+    }
+    else if (totalLosses > totalWins) {
+
+        console.log(`You lost the game! You won ${totalWins} times and lost ${totalLosses} times `)
+    }
+
+    else if(totalLosses === totalWins) {
+
+        console.log(`It's a tie! ${totalWins} to ${totalLosses}`)
+
+    }
+
+}
+
+}
+
+
+}
+
+
+reportScore()
+
+
+
+/* for (i = 0; i<5; i++) { function playGame(declareWinner) {
 
 
 
 
 
 
-    if (declareWinner === "Error! Type either rock, paper, or scissors!") {
+    if (declareWinner ===  `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`) {
     
     totalWins = totalWins + 1;
 
@@ -139,13 +183,13 @@ return `You have ${totalLosses} total losses`
 
 console.log(playGame(declareWinner))
 
-}
+} */
 
 
 // playGame(declareWinner)
 
 
-// console.log(playGame(declareWinner))
+// console.log(playGame(declareWinner)) 
 
     //Step 3a: make sure that playerSelection is converted .toLowerCase
     
