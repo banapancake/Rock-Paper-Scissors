@@ -124,16 +124,19 @@ function playRound (getComputerChoice) {
 btn1.addEventListener("click", event => {
     let playerSelection = "I select rock!"
     console.log(playerSelection);
-    if(computerSelection === "paper") {
-    let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+    if(computerSelection == "paper") {
+        console.log("bazinga");
+    let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
     console.log(loss);
     }
-    else if(computerSelection === "scissors") {
-        let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+    else if(computerSelection == "scissors") {
+        console.log("bazinga");
+        let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(win);
         }
-    else if(computerSelection === "rock") {
-        let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+    else if(computerSelection == "rock") {
+        console.log("bazinga");
+        let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(tie);
             }
     
@@ -144,16 +147,19 @@ btn1.addEventListener("click", event => {
     btn2.addEventListener("click", event => {
         let playerSelection = "I select scissors!"
     console.log(playerSelection);
-        if(computerSelection === "scissors") {
-        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+        if(computerSelection == "scissors") {
+            console.log("bazinga");
+        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         }
-       else if(computerSelection === "rock") {
-            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+       else if(computerSelection == "rock") {
+        console.log("bazinga");
+            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             }
-       else if(computerSelection === "paper") {
-            let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+       else if(computerSelection == "paper") {
+        console.log("bazinga");
+            let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(tie);
                 }
         
@@ -164,16 +170,19 @@ btn1.addEventListener("click", event => {
     btn3.addEventListener("click", event => {
         let playerSelection = "I select scissors!"
     console.log(playerSelection);
-        if(computerSelection === "rock") {
-        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+        if(computerSelection == "rock") {
+        console.log("bazinga");
+        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         }
-       else if(computerSelection === "paper") {
-            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+       else if(computerSelection == "paper") {
+        console.log("bazinga");
+            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             }
-       else if(computerSelection === "scissors") {
-            let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+       else if(computerSelection == "scissors") {
+        console.log("bazinga");
+            let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(tie);     
                 }
         
