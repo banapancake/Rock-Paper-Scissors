@@ -81,9 +81,9 @@ function getComputerChoice () {
 
 }
 
-const computerSelection = getComputerChoice ();
+//const computerSelection = getComputerChoice ();
 
-console.log(computerSelection)
+//console.log(computerSelection)
 
 // Step 2.5 create a function that can take a players input
 
@@ -94,8 +94,29 @@ console.log(computerSelection)
 // Step 3: create function playRound that takes parameter playerSelection and computer selection
 
 
-function playRound (playerSelection, computerSelection) {
+function playRound (getComputerChoice) {
+
+    function getComputerChoice () {
+
+        if (result === 1) {
+          return "rock"
+          }
+      
+          else if (result === 2) {
+              return "paper"
+              }
+            
+              else {
+                  return "scissors"
+                  }
+    }
+
+    const computerSelection = getComputerChoice();
+
+    
+    
     console.log("I'm here");
+    console.log(`The computer chose ${computerSelection}`)
 
 //event listener for btn 1
 
@@ -103,17 +124,17 @@ function playRound (playerSelection, computerSelection) {
 btn1.addEventListener("click", event => {
     let playerSelection = "I select rock!"
     console.log(playerSelection);
-    if(computerSelection == "paper") {
+    if(computerSelection === "paper") {
     let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
-    console.log("loss");
+    console.log(loss);
     }
-    if(computerSelection == "scissors") {
+    else if(computerSelection === "scissors") {
         let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
-        console.log("win");
+        console.log(win);
         }
-    if(computerSelection == "rock") {
+    else if(computerSelection === "rock") {
         let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
-        console.log("tie");
+        console.log(tie);
             }
     
     });
@@ -123,17 +144,17 @@ btn1.addEventListener("click", event => {
     btn2.addEventListener("click", event => {
         let playerSelection = "I select scissors!"
     console.log(playerSelection);
-        if(computerSelection == "scissors") {
+        if(computerSelection === "scissors") {
         let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
-        console.log("loss");
+        console.log(loss);
         }
-        if(computerSelection == "rock") {
+       else if(computerSelection === "rock") {
             let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
-            console.log("win");
+            console.log(win);
             }
-        if(computerSelection == "paper") {
+       else if(computerSelection === "paper") {
             let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
-            console.log("tie");
+            console.log(tie);
                 }
         
         });
@@ -143,17 +164,17 @@ btn1.addEventListener("click", event => {
     btn3.addEventListener("click", event => {
         let playerSelection = "I select scissors!"
     console.log(playerSelection);
-        if(computerSelection == "rock") {
+        if(computerSelection === "rock") {
         let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
-        console.log("loss");
+        console.log(loss);
         }
-        if(computerSelection == "paper") {
+       else if(computerSelection === "paper") {
             let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
-            console.log("win");
+            console.log(win);
             }
-        if(computerSelection == "scissors") {
+       else if(computerSelection === "scissors") {
             let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
-            console.log("tie");     
+            console.log(tie);     
                 }
         
         });
