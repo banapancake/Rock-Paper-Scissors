@@ -1,6 +1,77 @@
 //we are writing a rock-paper-scissors game to be played in console log
 
-// Step 1: initialize our rock paper and scissors variables
+//add buttons so through DOM to create a UI
+
+let span = document.getElementById("span")
+
+let btn1 = document.createElement("button");
+let  btn2 = document.createElement("button");
+let  btn3 = document.createElement("button");
+
+btn1.textContent = "rock";
+btn2.textContent = "paper";
+btn3.textContent = "scissors";
+
+span.appendChild(btn1); 
+span.appendChild(btn2);
+span.appendChild(btn3);
+
+//event listener for btn 1
+
+btn1.addEventListener("click", event => {
+if(computerSelection == "paper") {
+let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+return loss
+}
+if(computerSelection == "scissors") {
+    let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+    return loss
+    }
+if(computerSelection == "rock") {
+    let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+    return tie
+        }
+
+});
+
+//event listener for btn 2
+
+btn2.addEventListener("click", event => {
+    if(computerSelection == "scissors") {
+    let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+    return loss
+    }
+    if(computerSelection == "rock") {
+        let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+        return loss
+        }
+    if(computerSelection == "paper") {
+        let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+        return tie
+            }
+    
+    });
+
+    //event listener for btn 2
+
+btn3.addEventListener("click", event => {
+    if(computerSelection == "rock") {
+    let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: {computerLosses}`
+    return loss
+    }
+    if(computerSelection == "paper") {
+        let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: {computerLosses}`
+        return loss
+        }
+    if(computerSelection == "scissors") {
+        let tie = `You tied! The score is computer: ${computerWins} user: {computerLosses}`
+        return tie
+            }
+    
+    });
+
+
+//initialize our rock paper and scissors variables
 function reportScore (){
 
 
@@ -11,7 +82,7 @@ let totalLosses = 0;
 
 
 
-for (i = 0; i < 5; i++) {
+//for (i = 0; i < 5; i++) {
 
 
 let rock = "rock";
@@ -118,12 +189,11 @@ return error
 
 }
 
-}
+};
 
 
 
-
-const declareWinner = playRound (playerSelection, computerSelection); 
+ /* const declareWinner = playRound (playerSelection, computerSelection); 
 
 console.log(declareWinner)
 
@@ -142,17 +212,19 @@ console.log(`You win the game! You won ${totalWins} times and lost ${totalLosses
 
         console.log(`It's a tie! ${totalWins} to ${totalLosses}`)
 
-    }
+    } */ 
 
 }
 
-}
+//}
 
 
-}
 
 
-reportScore()
+
+reportScore() 
+
+//split
 
 
 
