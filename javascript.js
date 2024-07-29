@@ -56,7 +56,7 @@ return Math.floor(Math.random() * (max-min) + min);
 //Step 1.6: create a variable that calls our getRandomInt function so that we can use the result in our next function
 result = getRandomInt();
 
-console.log(result)
+//console.log(result)
 
 
 
@@ -96,6 +96,9 @@ function getComputerChoice () {
 
 function playRound (getComputerChoice) {
 
+let computerWins = 0;
+let computerLosses = 0;
+
     function getComputerChoice () {
 
         if (result === 1) {
@@ -116,7 +119,7 @@ function playRound (getComputerChoice) {
     
     
     console.log("I'm here");
-    console.log(`The computer chose ${computerSelection}`)
+    //console.log(`The computer chose ${computerSelection}`)
 
 //event listener for btn 1
 
@@ -126,12 +129,14 @@ btn1.addEventListener("click", event => {
     console.log(playerSelection);
     if(computerSelection == "paper") {
         console.log("bazinga");
-    let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
+        computerWins += 1;
+    let loss = `You lose this round! ${computerSelection} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
     console.log(loss);
     }
     else if(computerSelection == "scissors") {
         console.log("bazinga");
-        let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        computerLosses += 1;
+        let win = `You win this round!  ${playerSelection} beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(win);
         }
     else if(computerSelection == "rock") {
@@ -145,16 +150,18 @@ btn1.addEventListener("click", event => {
     //event listener for btn 2
     
     btn2.addEventListener("click", event => {
-        let playerSelection = "I select scissors!"
+        let playerSelection = "I select paper!"
     console.log(playerSelection);
         if(computerSelection == "scissors") {
+            computerWins += 1;
             console.log("bazinga");
-        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
+        let loss = `You lose this round! ${computerSelection} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         }
        else if(computerSelection == "rock") {
         console.log("bazinga");
-            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        computerLosses += 1;
+            let win = `You win this round!  ${playerSelection} beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             }
        else if(computerSelection == "paper") {
@@ -172,12 +179,14 @@ btn1.addEventListener("click", event => {
     console.log(playerSelection);
         if(computerSelection == "rock") {
         console.log("bazinga");
-        let loss = `You lose this round! ${computerSelection} beats rock. The score is computer: ${computerWins} user: ${computerLosses}`
+        computerWins += 1;
+        let loss = `You lose this round! ${computerSelection} beats  ${playerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         }
        else if(computerSelection == "paper") {
         console.log("bazinga");
-            let win = `You win this round! Rock beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        computerLosses += 1;
+            let win = `You win this round!  ${playerSelection}beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             }
        else if(computerSelection == "scissors") {
