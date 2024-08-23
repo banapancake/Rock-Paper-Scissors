@@ -27,6 +27,9 @@ let totalWins = 0;
 
 let totalLosses = 0;
 
+let computerWins = 0;
+let computerLosses = 0;
+
 
 
 //for (i = 0; i < 5; i++) {
@@ -47,16 +50,16 @@ function getRandomInt () {
     let max = 4;
     let min = 1;
 
-return Math.floor(Math.random() * (max-min) + min);
+return Math.random() * 10
 
 }
 
 
 
 //Step 1.6: create a variable that calls our getRandomInt function so that we can use the result in our next function
-result = getRandomInt();
+//result = getRandomInt();
 
-//console.log(result)
+//console.log(result);
 
 
 
@@ -65,21 +68,24 @@ result = getRandomInt();
 
 // Step 2: create function getComputerChoice that will select one of the following variables rock, paper, scissors
 
-function getComputerChoice () {
+function computerSelection () {
 
-  if (result === 1) {
+  if (result < 4) {
     return "rock"
     }
 
-    else if (result === 2) {
+    else if ((4 < result) && (result < 7)) {
         return "paper"
-        }
+    }
       
         else {
-            return "scissors"
-            }
+            return "scissors" }
+        
+        
+} 
 
-}
+//computerSelection(getRandomInt());
+
 
 //const computerSelection = getComputerChoice ();
 
@@ -94,7 +100,7 @@ function getComputerChoice () {
 // Step 3: create function playRound that takes parameter playerSelection and computer selection
 
 
-function playRound (getComputerChoice) {
+/* function playRound (getComputerChoice) {
 
 let computerWins = 0;
 let computerLosses = 0;
@@ -114,7 +120,7 @@ let computerLosses = 0;
                   }
     }
 
-    const computerSelection = getComputerChoice();
+    const computerSelection = getComputerChoice(); */
 
     
     
@@ -125,24 +131,41 @@ let computerLosses = 0;
 
 
 btn1.addEventListener("click", event => {
-    let playerSelection = "I select rock!"
-    console.log(playerSelection);
-    if(computerSelection == "paper") {
+    let playerSelection = "rock!"
+    result = getRandomInt();
+    console.log(`I select ${playerSelection}`);
+    let compChoice = computerSelection(getRandomInt());
+    console.log(computerSelection());
+    if(compChoice == "paper") {
         console.log("bazinga");
         computerWins += 1;
-    let loss = `You lose this round! ${computerSelection} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
+    let loss = `You lose this round! ${compChoice} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
     console.log(loss);
+    let newDiv = document.createElement("div"); // appending UI
+    let textContent = document.createTextNode(`${loss}`); //appending UI
+    newDiv.appendChild(textContent); // appending UI
+    document.getElementById("span").appendChild(newDiv);
+
     }
-    else if(computerSelection == "scissors") {
+    else if(compChoice == "scissors") {
         console.log("bazinga");
         computerLosses += 1;
-        let win = `You win this round!  ${playerSelection} beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        let win = `You win this round!  ${playerSelection} beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(win);
+        let newDiv = document.createElement("div"); // appending UI
+    let textContent = document.createTextNode(`${win}`); //appending UI
+    newDiv.appendChild(textContent); // appending UI
+    document.getElementById("span").appendChild(newDiv);
+
         }
-    else if(computerSelection == "rock") {
+    else if(compChoice == "rock") {
         console.log("bazinga");
         let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(tie);
+        let newDiv = document.createElement("div"); // appending UI
+            let textContent = document.createTextNode(`${tie}`); //appending UI
+            newDiv.appendChild(textContent); // appending UI
+            document.getElementById("span").appendChild(newDiv); 
             }
     
     });
@@ -150,24 +173,40 @@ btn1.addEventListener("click", event => {
     //event listener for btn 2
     
     btn2.addEventListener("click", event => {
-        let playerSelection = "I select paper!"
-    console.log(playerSelection);
-        if(computerSelection == "scissors") {
+        result = getRandomInt();
+        let playerSelection = "Paper"
+        console.log(result);
+        let compChoice = computerSelection(getRandomInt());
+        console.log(computerSelection());
+        console.log(`I select ${playerSelection}`);
+        if(compChoice == "scissors") {
             computerWins += 1;
             console.log("bazinga");
-        let loss = `You lose this round! ${computerSelection} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
+        let loss = `You lose this round! ${compChoice} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
+        let newDiv = document.createElement("div"); // appending UI
+        let textContent = document.createTextNode(`${loss}`); //appending UI
+        newDiv.appendChild(textContent); // appending UI
+        document.getElementById("span").appendChild(newDiv);
         }
-       else if(computerSelection == "rock") {
+       else if(compChoice == "rock") {
         console.log("bazinga");
         computerLosses += 1;
-            let win = `You win this round!  ${playerSelection} beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+            let win = `You win this round!  ${playerSelection} beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
+            let newDiv = document.createElement("div"); // appending UI
+            let textContent = document.createTextNode(`${win}`); //appending UI
+            newDiv.appendChild(textContent); // appending UI
+            document.getElementById("span").appendChild(newDiv);
             }
-       else if(computerSelection == "paper") {
+       else if(compChoice == "paper") {
         console.log("bazinga");
             let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(tie);
+            let newDiv = document.createElement("div"); // appending UI
+            let textContent = document.createTextNode(`${tie}`); //appending UI
+            newDiv.appendChild(textContent); // appending UI
+            document.getElementById("span").appendChild(newDiv); 
                 }
         
         });
@@ -175,29 +214,44 @@ btn1.addEventListener("click", event => {
         //event listener for btn 2
     
     btn3.addEventListener("click", event => {
-        let playerSelection = "I select scissors!"
-    console.log(playerSelection);
-        if(computerSelection == "rock") {
+        let playerSelection = "Scissors"
+        result = getRandomInt();
+        console.log(`I select ${playerSelection}`);
+    let compChoice = computerSelection(getRandomInt());
+    console.log(computerSelection());
+        if(compChoice == "rock") {
         console.log("bazinga");
         computerWins += 1;
-        let loss = `You lose this round! ${computerSelection} beats  ${playerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        let loss = `You lose this round! ${compChoice} beats  ${playerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
+        let newDiv = document.createElement("div"); // appending UI
+        let textContent = document.createTextNode(`${loss}`); //appending UI
+        newDiv.appendChild(textContent); // appending UI
+        document.getElementById("span").appendChild(newDiv);
         }
-       else if(computerSelection == "paper") {
+       else if(compChoice == "paper") {
         console.log("bazinga");
         computerLosses += 1;
-            let win = `You win this round!  ${playerSelection}beats ${computerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+            let win = `You win this round!  ${playerSelection}beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
+            let newDiv = document.createElement("div"); // appending UI
+            let textContent = document.createTextNode(`${win}`); //appending UI
+            newDiv.appendChild(textContent); // appending UI
+            document.getElementById("span").appendChild(newDiv);
             }
-       else if(computerSelection == "scissors") {
+       else if(compChoice == "scissors") {
         console.log("bazinga");
             let tie = `You tied! The score is computer: ${computerWins} user: ${computerLosses}`
-            console.log(tie);     
+            console.log(tie); 
+            let newDiv = document.createElement("div"); // appending UI
+            let textContent = document.createTextNode(`${tie}`); //appending UI
+            newDiv.appendChild(textContent); // appending UI
+            document.getElementById("span").appendChild(newDiv);    
                 }
         
         });
-    
 
+    
 
 
 
@@ -225,8 +279,8 @@ console.log(`You win the game! You won ${totalWins} times and lost ${totalLosses
         console.log(`It's a tie! ${totalWins} to ${totalLosses}`)
 
     } */ 
-playRound();
-}
+//playRound();
+// }
 
 //}
 
