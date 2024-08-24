@@ -1,6 +1,6 @@
-//we are writing a rock-paper-scissors game to be played in console log
 
-//add buttons so through DOM to create a UI
+
+//Create rock paper scissors game with UI through DOM manipulation
 
 
 
@@ -39,7 +39,7 @@ span.appendChild(btn3);
 
 
 
-//initialize our rock paper and scissors variables
+
 function reportScore (){
 
 
@@ -52,12 +52,7 @@ let computerWins = 0;
 let computerLosses = 0;
 
 
-
-
-
-
-
-//for (i = 0; i < 5; i++) {
+//initialize our rock paper and scissors variables
 
 
 let rock = "rock";
@@ -68,7 +63,7 @@ let scissors ="scissors";
 
 
 
-//Step 1.5: create a function that selects a random integer of 1,2,3
+//create a function that selects a random integer of 1,2,3
 
 function getRandomInt () {
 
@@ -81,17 +76,6 @@ return Math.random() * 10
 
 
 
-//Step 1.6: create a variable that calls our getRandomInt function so that we can use the result in our next function
-//result = getRandomInt();
-
-//console.log(result);
-
-
-
-
-
-
-// Step 2: create function getComputerChoice that will select one of the following variables rock, paper, scissors
 
 function computerSelection () {
 
@@ -109,49 +93,6 @@ function computerSelection () {
         
 } 
 
-//computerSelection(getRandomInt());
-
-
-//const computerSelection = getComputerChoice ();
-
-//console.log(computerSelection)
-
-// Step 2.5 create a function that can take a players input
-
-   //const playerSelection = prompt ();
-
-   //console.log (playerSelection)
-
-// Step 3: create function playRound that takes parameter playerSelection and computer selection
-
-
-/* function playRound (getComputerChoice) {
-
-let computerWins = 0;
-let computerLosses = 0;
-
-    function getComputerChoice () {
-
-        if (result === 1) {
-          return "rock"
-          }
-      
-          else if (result === 2) {
-              return "paper"
-              }
-            
-              else {
-                  return "scissors"
-                  }
-    }
-
-    const computerSelection = getComputerChoice(); */
-
-    
-    
-    //console.log(`The computer chose ${computerSelection}`)
-
-//event listener for btn 1
 
 function endGame () {
 
@@ -310,30 +251,7 @@ btn1.addEventListener("click", event => {
 
 
 
- /* const declareWinner = playRound (playerSelection, computerSelection); 
 
-console.log(declareWinner)
-
-if (i===4) {
-
-    if(totalWins > totalLosses) {
-
-console.log(`You win the game! You won ${totalWins} times and lost ${totalLosses} times`)
-    }
-    else if (totalLosses > totalWins) {
-
-        console.log(`You lost the game! You won ${totalWins} times and lost ${totalLosses} times `)
-    }
-
-    else if(totalLosses === totalWins) {
-
-        console.log(`It's a tie! ${totalWins} to ${totalLosses}`)
-
-    } */ 
-//playRound();
-// }
-
-//}
 
 
 
