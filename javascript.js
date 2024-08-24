@@ -155,7 +155,7 @@ let computerLosses = 0;
 
 function endGame () {
 
-    if ((computerWins > 2) || (computerLosses > 2)) { 
+    if ((computerWins > 4) || (computerLosses > 4)) { 
         
         
         alert(`Game Over! 
@@ -175,7 +175,7 @@ function endGame () {
 
 
 btn1.addEventListener("click", event => {
-    let playerSelection = "rock!"
+    let playerSelection = "ROCK"
     result = getRandomInt();
     console.log(`I select ${playerSelection}`);
     let compChoice = computerSelection(getRandomInt());
@@ -183,7 +183,7 @@ btn1.addEventListener("click", event => {
     if(compChoice == "paper") {
         console.log("bazinga");
         computerWins += 1;
-    let loss = `You lose this round! ${compChoice} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
+    let loss = `You lose this round! ${compChoice.toUpperCase()} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
     console.log(loss);
     let newDiv = document.createElement("div"); // appending UI
     let textContent = document.createTextNode(`${loss}`); //appending UI
@@ -194,7 +194,7 @@ btn1.addEventListener("click", event => {
     else if(compChoice == "scissors") {
         console.log("bazinga");
         computerLosses += 1;
-        let win = `You win this round!  ${playerSelection} beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
+        let win = `You win this round!  ${playerSelection} beats ${compChoice.toUpperCase()} The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(win);
         let newDiv = document.createElement("div"); // appending UI
     let textContent = document.createTextNode(`${win}`); //appending UI
@@ -219,7 +219,7 @@ btn1.addEventListener("click", event => {
     
     btn2.addEventListener("click", event => {
         result = getRandomInt();
-        let playerSelection = "Paper"
+        let playerSelection = "PAPER"
         console.log(result);
         let compChoice = computerSelection(getRandomInt());
         console.log(computerSelection());
@@ -227,7 +227,7 @@ btn1.addEventListener("click", event => {
         if(compChoice == "scissors") {
             computerWins += 1;
             console.log("bazinga");
-        let loss = `You lose this round! ${compChoice} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
+        let loss = `You lose this round! ${compChoice.toUpperCase()} beats ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         let newDiv = document.createElement("div"); // appending UI
         let textContent = document.createTextNode(`${loss}`); //appending UI
@@ -237,7 +237,7 @@ btn1.addEventListener("click", event => {
        else if(compChoice == "rock") {
         console.log("bazinga");
         computerLosses += 1;
-            let win = `You win this round!  ${playerSelection} beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
+            let win = `You win this round!  ${playerSelection} beats ${compChoice.toUpperCase()}. The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             let newDiv = document.createElement("div"); // appending UI
             let textContent = document.createTextNode(`${win}`); //appending UI
@@ -261,7 +261,7 @@ btn1.addEventListener("click", event => {
         //event listener for btn 2
     
     btn3.addEventListener("click", event => {
-        let playerSelection = "Scissors"
+        let playerSelection = "SCISSORS"
         result = getRandomInt();
         console.log(`I select ${playerSelection}`);
     let compChoice = computerSelection(getRandomInt());
@@ -269,7 +269,7 @@ btn1.addEventListener("click", event => {
         if(compChoice == "rock") {
         console.log("bazinga");
         computerWins += 1;
-        let loss = `You lose this round! ${compChoice} beats  ${playerSelection} The score is computer: ${computerWins} user: ${computerLosses}`
+        let loss = `You lose this round! ${compChoice.toUpperCase()} beats  ${playerSelection}. The score is computer: ${computerWins} user: ${computerLosses}`
         console.log(loss);
         let newDiv = document.createElement("div"); // appending UI
         let textContent = document.createTextNode(`${loss}`); //appending UI
@@ -279,7 +279,7 @@ btn1.addEventListener("click", event => {
        else if(compChoice == "paper") {
         console.log("bazinga");
         computerLosses += 1;
-            let win = `You win this round!  ${playerSelection}beats ${compChoice} The score is computer: ${computerWins} user: ${computerLosses}`
+            let win = `You win this round! ${playerSelection} beats ${compChoice.toUpperCase()}. The score is computer: ${computerWins} user: ${computerLosses}`
             console.log(win);
             let newDiv = document.createElement("div"); // appending UI
             let textContent = document.createTextNode(`${win}`); //appending UI
@@ -341,64 +341,4 @@ console.log(`You win the game! You won ${totalWins} times and lost ${totalLosses
 
 reportScore(); 
 
-//split
 
-
-
-/* for (i = 0; i<5; i++) { function playGame(declareWinner) {
-
-
-
-
-
-
-    if (declareWinner ===  `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}.`) {
-    
-    totalWins = totalWins + 1;
-
-        return `You have ${totalWins} total wins`
-    
-
-
-    }
-
-else {
-
-    totalLosses = totalLosses + 1;
-
-return `You have ${totalLosses} total losses`
-}
-    }
-
-console.log(playGame(declareWinner))
-
-} */
-
-
-// playGame(declareWinner)
-
-
-// console.log(playGame(declareWinner)) 
-
-    //Step 3a: make sure that playerSelection is converted .toLowerCase
-    
-    //Step 3b: write an if statement for case a:
-    // IF
-    // playerSelection = rock and computer selection = scissors
-    // OR playerSelection = scissors and computer selection = paper
-    // OR  playerSelection = scissors and computer selection = paper
-
-    //then return "You win! {playerSelection} beats {computerSelection}"
-
-
-    //Step 3c: write an if statement for case b:
-    // IF
-    // computerSelection= rock and playerSelection = scissors
-    // OR computerSelection = scissors and playerSelection= paper
-    // OR  computerSelection = scissors and playerSelection= paper
-
-    //then return "You lose! {computerSelection} beats {playerSelection}"
-
-    //use Console.log to see if we are returning the correct thing console.log(playRound(playerSelection, computerSelection));
-
-    //Step 4: Create a playGame function that calls playRound 5 times and keeps score and reports a winner.
