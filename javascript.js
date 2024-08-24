@@ -2,11 +2,32 @@
 
 //add buttons so through DOM to create a UI
 
+
+
 let span = document.getElementById("span")
 
 let btn1 = document.createElement("button");
 let  btn2 = document.createElement("button");
 let  btn3 = document.createElement("button");
+
+document.body.style.backgroundColor = "teal";
+
+
+btn1.style.backgroundColor = "grey";
+btn1.style.width = "80px";
+btn1.style.height = "60px";
+btn1.style.margin = "20px";
+
+btn2.style.backgroundColor = "grey";
+btn2.style.width = "80px";
+btn2.style.height = "60px";
+btn2.style.margin = "20px";
+
+btn3.style.backgroundColor = "grey";
+btn3.style.width = "80px";
+btn3.style.height = "60px";
+btn3.style.margin = "20px";
+
 
 btn1.textContent = "rock";
 btn2.textContent = "paper";
@@ -29,6 +50,10 @@ let totalLosses = 0;
 
 let computerWins = 0;
 let computerLosses = 0;
+
+
+
+
 
 
 
@@ -124,10 +149,29 @@ let computerLosses = 0;
 
     
     
-    console.log("I'm here");
     //console.log(`The computer chose ${computerSelection}`)
 
 //event listener for btn 1
+
+function endGame () {
+
+    if ((computerWins > 2) || (computerLosses > 2)) { 
+        
+        
+        alert(`Game Over! 
+
+            Final Score 
+            
+            Computer: ${computerWins}
+
+            You: ${computerLosses} 
+        
+            Play Again? `);
+            location.reload();
+
+    
+    };
+};
 
 
 btn1.addEventListener("click", event => {
@@ -167,7 +211,8 @@ btn1.addEventListener("click", event => {
             newDiv.appendChild(textContent); // appending UI
             document.getElementById("span").appendChild(newDiv); 
             }
-    
+           
+            endGame();   
     });
     
     //event listener for btn 2
@@ -208,6 +253,8 @@ btn1.addEventListener("click", event => {
             newDiv.appendChild(textContent); // appending UI
             document.getElementById("span").appendChild(newDiv); 
                 }
+
+                endGame();  
         
         });
     
@@ -248,11 +295,15 @@ btn1.addEventListener("click", event => {
             newDiv.appendChild(textContent); // appending UI
             document.getElementById("span").appendChild(newDiv);    
                 }
+
+                endGame();    
         
         });
 
-    
+       
 
+    
+        
 
 
 };
